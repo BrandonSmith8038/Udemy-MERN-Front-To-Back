@@ -67,13 +67,6 @@
       }
     ],
     "radix": 0,
-    "no-shadow": [
-      2,
-      {
-        "hoist": "all",
-        "allow": ["resolve", "reject", "done", "next", "err", "error"]
-      }
-    ],
     "quotes": [
       2,
       "single",
