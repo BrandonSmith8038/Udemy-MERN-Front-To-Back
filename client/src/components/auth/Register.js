@@ -27,6 +27,8 @@ class Register extends Component {
       password,
       password2,
     };
+
+    console.log(newUser);
   };
 
   render() {
