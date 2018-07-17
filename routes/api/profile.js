@@ -23,7 +23,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
     .then(profile => {
       if (!profile) {
         errors.noprofile = 'There is no profile for this user';
-        return res.status(403).json(errors);
+        return res.status(400).json(errors);
       }
       res.json(profile);
     })
