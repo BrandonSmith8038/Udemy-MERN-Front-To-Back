@@ -6,7 +6,13 @@ const initalState = {
   loading: false,
 };
 
-export default function(state = initalState, action) {
+const initalTestingState = {
+  profile: {},
+  profiles: null,
+  loading: false,
+};
+
+export default function(state = initalTestingState, action) {
   switch (action.type) {
     case PROFILE_LOADING:
       return {
