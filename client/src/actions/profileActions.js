@@ -5,6 +5,7 @@ import {
   GET_ERRORS,
   CLEAR_CURRENT_PROFILE,
   SET_CURRENT_USER,
+  GET_PROFILES,
 } from './types';
 
 // Get Current Profile
@@ -44,6 +45,25 @@ export const createProfile = (profileData, history) => dispatch => {
 export const setProfileLoading = () => ({
   type: PROFILE_LOADING,
 });
+
+// Get All Profiles
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get('/api/profile/all')
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: res.data,
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: {},
+      })
+    );
+};
 
 // Clear Profile
 export const clearCurrentProfile = () => ({
