@@ -22,7 +22,6 @@ class ProfileAbout extends Component {
       ));
     }
 
-    console.log(profile);
     return (
       <div>
         <div className="row">
@@ -50,4 +49,8 @@ class ProfileAbout extends Component {
     );
   }
 }
+
+ProfileAbout.propTypeps = {
+  profile: PropTypes.object.isRequired,
+};
 export default ProfileAbout;
