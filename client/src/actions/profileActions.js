@@ -50,6 +50,19 @@ export const clearCurrentProfile = () => ({
   type: CLEAR_CURRENT_PROFILE,
 });
 
+// Add Experience
+export const addExperience = (expData, history) => dispatch => {
+  axios
+    .post('/api/profile/experience', expData)
+    .then(res => history.push('/dashboard'))
+    .catch(error => {
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data,
+      });
+    });
+};
+
 // Delete Account and Profile
 export const deleteAccount = () => dispatch => {
   if (window.confirm('Are You Sure? This can NOT be undone!')) {
