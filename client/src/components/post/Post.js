@@ -6,7 +6,7 @@ import { getPost } from '../../actions/postActions';
 import PostItem from '../posts/PostItem';
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
-
+import CommentFeed from './CommentFeed';
 class Post extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.id);
@@ -36,6 +36,7 @@ class Post extends Component {
                 Go Back To Feed
               </Link>
               {postContent}
+              <CommentFeed postId={post._id} comments={post.comments} />
             </div>
           </div>
         </div>
