@@ -11,13 +11,13 @@ const initalState = {
   loading: false,
 };
 
-const initalTestingState = {
-  profile: {},
-  profiles: null,
-  loading: false,
-};
+// const initalTestingState = {
+//   profile: {},
+//   profiles: null,
+//   loading: false,
+// };
 
-export default function(state = initalTestingState, action) {
+export default function(state = initalState, action) {
   switch (action.type) {
     case PROFILE_LOADING:
       return {

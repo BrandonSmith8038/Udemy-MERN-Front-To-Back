@@ -1,4 +1,5 @@
-module.exports = {
-  MONGO_URI: 'mongodb://cowboy8038:Nascar8038@ds133601.mlab.com:33601/cowboy8038-devconnector',
-  SECRETORKEY: 'secret',
-};
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./keys_prod');
+} else {
+  module.exports = require('./keys_dev');
+}
